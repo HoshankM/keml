@@ -70,6 +70,8 @@
         eType="#//InformationLink" containment="true" eOpposite="#//InformationLink/source"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isUsedOn" upperBound="-1"
         eType="#//SendMessage" eOpposite="#//SendMessage/uses"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="premises" upperBound="-1"
+        eType="#//Information"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="InformationLinkType">
     <eLiterals name="SUPPLEMENT"/>
@@ -77,6 +79,7 @@
     <eLiterals name="STRONG_SUPPORT" value="2" literal="STRONG_SUPPORT"/>
     <eLiterals name="ATTACK" value="3" literal="ATTACK"/>
     <eLiterals name="STRONG_ATTACK" value="4"/>
+    <eLiterals name="PREMISE" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InformationLink">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
