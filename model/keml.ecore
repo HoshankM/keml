@@ -71,7 +71,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="isUsedOn" upperBound="-1"
         eType="#//SendMessage" eOpposite="#//SendMessage/uses"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="premises" upperBound="-1"
-        eType="#//Information"/>
+        eType="#//Information" eOpposite="#//Information/claims"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="claims" upperBound="-1"
+        eType="#//Information" eOpposite="#//Information/premises"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="InformationLinkType">
     <eLiterals name="SUPPLEMENT"/>
