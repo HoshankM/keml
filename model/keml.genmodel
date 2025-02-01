@@ -14,7 +14,8 @@
       <genEnumLiterals ecoreEnumLiteral="keml.ecore#//InformationLinkType/STRONG_SUPPORT"/>
       <genEnumLiterals ecoreEnumLiteral="keml.ecore#//InformationLinkType/ATTACK"/>
       <genEnumLiterals ecoreEnumLiteral="keml.ecore#//InformationLinkType/STRONG_ATTACK"/>
-      <genEnumLiterals ecoreEnumLiteral="keml.ecore#//InformationLinkType/PREMISE"/>
+      <genEnumLiterals ecoreEnumLiteral="keml.ecore#//InformationLinkType/IMPLICATION"/>
+      <genEnumLiterals ecoreEnumLiteral="keml.ecore#//InformationLinkType/IMPLICATION_NEGATION"/>
     </genEnums>
     <genClasses ecoreClass="keml.ecore#//Conversation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute keml.ecore#//Conversation/title"/>
@@ -62,8 +63,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//Information/targetedBy"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//Information/causes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//Information/isUsedOn"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//Information/premises"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//Information/claims"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference keml.ecore#//Information/asLiteral"/>
     </genClasses>
     <genClasses ecoreClass="keml.ecore#//InformationLink">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute keml.ecore#//InformationLink/linkText"/>
@@ -71,5 +71,15 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//InformationLink/target"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//InformationLink/source"/>
     </genClasses>
+    <genClasses ecoreClass="keml.ecore#//Junction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute keml.ecore#//Junction/isDisjunction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//Junction/content"/>
+    </genClasses>
+    <genClasses ecoreClass="keml.ecore#//Literal">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//Literal/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute keml.ecore#//Literal/isNegated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference keml.ecore#//Literal/premises"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="keml.ecore#//LogicExpression"/>
   </genPackages>
 </genmodel:GenModel>
