@@ -71,7 +71,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="isUsedOn" upperBound="-1"
         eType="#//SendMessage" eOpposite="#//SendMessage/uses"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="asLiteral" lowerBound="1"
-        upperBound="2" eType="#//Literal" containment="true"/>
+        upperBound="2" eType="#//Literal" containment="true" eOpposite="#//Literal/source"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="InformationLinkType">
     <eLiterals name="SUPPLEMENT"/>
@@ -92,15 +92,20 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Junction" eSuperTypes="#//LogicExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDisjunction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" lowerBound="2"
-        upperBound="-1" eType="#//LogicExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
+        eType="#//LogicExpression"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Literal" eSuperTypes="#//LogicExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="#//Information"/>
+        eType="#//Information" eOpposite="#//Information/asLiteral"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNegated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="premises" upperBound="-1"
-        eType="#//LogicExpression" containment="true"/>
+        eType="#//LogicExpression" eOpposite="#//LogicExpression/premiseOf"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usedbyJunctions" upperBound="-1"
+        eType="#//Junction" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LogicExpression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicExpression" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="premiseOf" upperBound="-1"
+        eType="#//Literal" eOpposite="#//Literal/premises"/>
+  </eClassifiers>
 </ecore:EPackage>

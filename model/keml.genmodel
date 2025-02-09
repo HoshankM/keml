@@ -79,7 +79,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//Literal/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute keml.ecore#//Literal/isNegated"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference keml.ecore#//Literal/premises"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference keml.ecore#//Literal/usedbyJunctions"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="keml.ecore#//LogicExpression"/>
+    <genClasses image="false" ecoreClass="keml.ecore#//LogicExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//LogicExpression/premiseOf"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
