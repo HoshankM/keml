@@ -80,7 +80,8 @@
     <eLiterals name="ATTACK" value="3" literal="ATTACK"/>
     <eLiterals name="STRONG_ATTACK" value="4"/>
     <eLiterals name="IMPLICATION" value="5"/>
-    <eLiterals name="IMPLICATION_NEGATION" value="6"/>
+    <eLiterals name="TNEGATED_IMPLICATION" value="6"/>
+    <eLiterals name="SNEGATED_IMPLICATION" value="7"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InformationLink">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -98,14 +99,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Literal" eSuperTypes="#//LogicExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//Information" eOpposite="#//Information/asLiteral"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNegated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="negated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="premises" upperBound="-1"
-        eType="#//LogicExpression" eOpposite="#//LogicExpression/premiseOf"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="usedbyJunctions" upperBound="-1"
+        eType="#//LogicExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usedInJunctions" upperBound="-1"
         eType="#//Junction" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LogicExpression" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="premiseOf" upperBound="-1"
-        eType="#//Literal" eOpposite="#//Literal/premises"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicExpression" abstract="true"/>
 </ecore:EPackage>

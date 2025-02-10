@@ -15,7 +15,8 @@
       <genEnumLiterals ecoreEnumLiteral="keml.ecore#//InformationLinkType/ATTACK"/>
       <genEnumLiterals ecoreEnumLiteral="keml.ecore#//InformationLinkType/STRONG_ATTACK"/>
       <genEnumLiterals ecoreEnumLiteral="keml.ecore#//InformationLinkType/IMPLICATION"/>
-      <genEnumLiterals ecoreEnumLiteral="keml.ecore#//InformationLinkType/IMPLICATION_NEGATION"/>
+      <genEnumLiterals ecoreEnumLiteral="keml.ecore#//InformationLinkType/TNEGATED_IMPLICATION"/>
+      <genEnumLiterals ecoreEnumLiteral="keml.ecore#//InformationLinkType/SNEGATED_IMPLICATION"/>
     </genEnums>
     <genClasses ecoreClass="keml.ecore#//Conversation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute keml.ecore#//Conversation/title"/>
@@ -77,12 +78,10 @@
     </genClasses>
     <genClasses ecoreClass="keml.ecore#//Literal">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//Literal/source"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute keml.ecore#//Literal/isNegated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute keml.ecore#//Literal/negated"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference keml.ecore#//Literal/premises"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference keml.ecore#//Literal/usedbyJunctions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference keml.ecore#//Literal/usedInJunctions"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="keml.ecore#//LogicExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference keml.ecore#//LogicExpression/premiseOf"/>
-    </genClasses>
+    <genClasses image="false" ecoreClass="keml.ecore#//LogicExpression"/>
   </genPackages>
 </genmodel:GenModel>
