@@ -1,6 +1,6 @@
 # Logic-based KEML (metamodel)
 
-**Note:** This branch features an alternative [KEML](https://github.com/keml-group/) component that leverages logic-based argumentation framework (**LAF**), and is designed *only* to be use along other LAF components of KEML. For the corresponding baseline version of this component, see the [bipolar weighted framework](https://github.com/keml-group/keml) version.
+**Note:** This branch features an alternative [KEML](https://github.com/keml-group/) component that leverages logic-based argumentation framework (**LAF**), and is designed *only* to be used along other LAF components of KEML. For the corresponding baseline version of this component, see the [bipolar weighted framework](https://github.com/keml-group/keml) version.
 -----------------------
 KEML is an [Eclipse EMF project](https://projects.eclipse.org/projects/modeling.emf.emf) meaning it consists of a set of Eclipse Plugins that create several handy editors and analyzers for KEML files. Each of these plugins forms a project of the [KEML group](https://github.com/keml-group). You are currently viewing the **KEML model project**. It basically holds the central definition of the KEML metamodel as an .ecore file and can be used to generate the model java classes and further projects (see [Code Generation](#Code-Generation)).
 
